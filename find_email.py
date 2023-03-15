@@ -1,6 +1,12 @@
 '''
     Function to find email addresses per line
     
+    Function Definition:
+        This function takes a string as an input argument. This string can be a line from any file.
+        This function returns a list of two elements. 
+            1. First element indicates if the email is found in the argument string (i.e. return > 0) or not (i.e. return -1), 
+            2. Second element is the email address. If first-element is -1 (i.e. no email) it is empty, else it returns the actual email address. 
+    
     Limitation of function: 
         Currently this function can only extract single email address per line.
         Time permit, in future, I will add functionality so that if there are more than one email addresses, 
@@ -49,11 +55,20 @@ def find_email(line):
     if domain_name_check == -1:
         return [domain_name_check, '']
     
-    # Now that all the checks are done, extract the actual email ID
-    while True:
-        
+    '''
+        Now that all the checks are done, extract the actual email ID in the following loop.
+        What we are doing here is that we are removing all the White spaces before the @ symbol to extract the email address.
+        For example, if the string email_id is "This is email xyz@gmail.com", then 
+            after first iteration, we get email_id = "is email xyz@gmail.com"
+            after second iteration, we get email_id = "email xyz@gmail.com"
+            after thid iteration, we get email_id = "xyz@gmail.com"
+            In the fourth iteration, since there is no gap (white space) before @ symbol, it we get -1 value using find() and function will end. 
+    
+    '''
+    while True:        
         start_of_email = email_id.find(' ')
-                
+        
+        # Checking if all the white spaces before the email address are removed.         
         if start_of_email == -1:            
             break
         
