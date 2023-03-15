@@ -1,4 +1,25 @@
-# Function to find email addresses per line
+'''
+    Function to find email addresses per line
+    
+    Limitation of function: 
+        Currently this function can only extract single email address per line.
+        Time permit, in future, I will add functionality so that if there are more than one email addresses, 
+        the function should be able to extrac them as well.
+        
+        Any ways, the file that I am using has one email address per line
+        
+    About the text file: 
+        I am using the .txt file from the followin URL: https://www.py4e.com/code3/mbox-short.txt
+        This file is uploaded by Dr. Chuck (website here: https://www.dr-chuck.com/)
+        He has his Youtube course on learning Python here: https://www.youtube.com/watch?v=8DvywoWv6fI 
+        This course is an excellent resource for anyone who wants to learn Python
+    
+    About identifying email address:
+        An email address has Five parts: a Local name, @ symbol, and domain name, followed by dot, then a Domain (.com, .org, .edu etc).
+        An email address is always of the following type: <some name>@domainname.domain (e.g. shanjaffry@gmail.com)
+        
+
+'''
 def find_email(line):
     
     # Find the @ symbol since it is a necessity for email address syntax.
